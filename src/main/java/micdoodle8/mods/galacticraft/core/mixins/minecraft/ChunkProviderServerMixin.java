@@ -20,7 +20,7 @@ public class ChunkProviderServerMixin {
                     target = "Lcpw/mods/fml/common/registry/GameRegistry;generateWorld(IILnet/minecraft/world/World;Lnet/minecraft/world/chunk/IChunkProvider;Lnet/minecraft/world/chunk/IChunkProvider;)V",
                     value = "INVOKE"),
             method = "populate(Lnet/minecraft/world/chunk/IChunkProvider;II)V",
-            require = 1)
+            require = 0)
     private boolean galacticraft$checkOtherModPreventGenerate(int chunkX, int chunkZ, World world,
             IChunkProvider chunkProvider, IChunkProvider chunkGenerator) {
         return !WorldUtil.otherModPreventGenerate(chunkX, chunkZ, world, chunkProvider, chunkGenerator);
