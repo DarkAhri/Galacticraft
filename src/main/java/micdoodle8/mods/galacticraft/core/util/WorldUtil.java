@@ -93,8 +93,6 @@ import micdoodle8.mods.galacticraft.core.network.PacketSimple.EnumSimplePacket;
 import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import micdoodle8.mods.galacticraft.core.tile.TileEntityTelemetry;
 
-// import micdoodle8.mods.galacticraft.planets.asteroids.entities.EntityAstroMiner;
-
 public class WorldUtil {
 
     public static HashMap<Integer, Integer> registeredSpaceStations; // Dimension IDs and providers (providers are -26
@@ -1414,7 +1412,7 @@ public class WorldUtil {
             generatorsInitialised = true;
 
             try {
-                final Class<?> GCGreg = Class.forName("bloodasp.galacticgreg.GT_Worldgenerator_Space");
+                final Class<?> GCGreg = Class.forName("galacticgreg.WorldGeneratorSpace");
                 if (GCGreg != null) {
                     final Field regField = Class.forName("cpw.mods.fml.common.registry.GameRegistry")
                             .getDeclaredField("worldGenerators");
