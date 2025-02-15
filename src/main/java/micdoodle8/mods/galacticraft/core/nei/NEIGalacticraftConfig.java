@@ -17,11 +17,14 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import codechicken.nei.PositionedStack;
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
+import cpw.mods.fml.common.Loader;
 import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
 import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
+import micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems;
+import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 
 public class NEIGalacticraftConfig implements IConfigureNEI {
 
@@ -46,6 +49,15 @@ public class NEIGalacticraftConfig implements IConfigureNEI {
                     API.hideItem(new ItemStack(block, 1, j));
                 }
             }
+        }
+
+        if (Loader.isModLoaded(Constants.MOD_ID_NEW_HORIZONS_CORE_MOD)) {
+            API.hideItem(new ItemStack(GCItems.basicItem, 1, 3));
+            API.hideItem(new ItemStack(GCItems.basicItem, 1, 4));
+            API.hideItem(new ItemStack(GCItems.basicItem, 1, 5));
+            API.hideItem(new ItemStack(GCItems.meteoricIronIngot, 1, 0));
+            API.hideItem(new ItemStack(MarsItems.marsItemBasic, 1, 2));
+            API.hideItem(new ItemStack(AsteroidsItems.basicItem, 1, 5));
         }
 
         // Handled by GalaxySpace
